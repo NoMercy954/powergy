@@ -149,7 +149,8 @@
                         </tr>
                 </table> 
                 <table t-if="'/IN/' in o.name" style="margin: auto;">
-                    <td><br/><br/><br/><br/><br/><br/><td><br/><br/><br/><br/><br/><br/><td><br/><br/><br/><br/><br/><br/>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <tr>
                             <td>
                             <spand style="text-align: center;">______________________________</spand>
                             <h5 style="text-align: center;">Recibe</h5>
