@@ -30,7 +30,7 @@
                                 <strong>Monto Pagado: </strong><span t-field="o.amount" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                             </div>
                             <div class="col-xs-6">
-                                <strong>RFC: </strong><span t-field="o.partner_type == 'customer'"/>
+                                <strong>RFC: </strong><span t-field="o.partner_type"/>
                             </div>
                             <div class="col-xs-6">
                                 <strong>Uso de CFDI: </strong><span t-field="o.l10n_mx_edi_origin"/>
