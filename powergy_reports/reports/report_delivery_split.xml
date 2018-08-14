@@ -122,7 +122,7 @@
                         </t>
                     </p>
                 </div>
-                <br/><br/><br/><br/><br/>
+                <br/><br/><br/><br/><br/><td><br/><br/><br/><br/><br/><br/>
                 <table t-if="'/OUT/' in o.name" style="margin: auto;">
                         <tr>
                             <td>
@@ -149,11 +149,7 @@
                         </tr>
                 </table> 
                 <table t-if="'/IN/' in o.name" style="margin: auto;">
-                        <tr>
-                        <td><br/><br/><br/><br/><br/><br/></td> 
-                        </tr>
-                        <tr><td><br/><br/><br/><br/><br/><br/></td></tr>
-                        <tr>
+                    <td><br/><br/><br/><br/><br/><br/><td><br/><br/><br/><br/><br/><br/><td><br/><br/><br/><br/><br/><br/>
                             <td>
                             <spand style="text-align: center;">______________________________</spand>
                             <h5 style="text-align: center;">Recibe</h5>
