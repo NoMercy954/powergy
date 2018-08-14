@@ -13,10 +13,6 @@
                             <div t-if="o.partner_id.vat" class="mt16"><t t-esc="o.company_id.country_id.vat_label or 'RFC'"/>: <span t-field="o.partner_id.vat"/></div>
                         </div>
                     </div>
-                         <!--Here the field observation-->
-                        <div style="margin:left; width:50%;">
-                            <p>Observaciones: <span t-field="o.observations"/></p>
-                        </div>
                     <h2>
                         <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Factura</span>
                         <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Factura borrador</span>
@@ -159,6 +155,10 @@
                                     </tr>
                                 </table>
                             </div>
+                                                 <!--Here the field observation-->
+                        <div style="margin:left; width:50%;">
+                            <p>Observaciones: <span t-field="o.observations"/></p>
+                        </div>
                         </div>
                     </div>
                 <p t-if="o.comment"> 

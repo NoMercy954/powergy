@@ -181,9 +181,9 @@
                 </div>
             </div>
 
-            <p t-field="doc.note"/>
+            <p t-field="doc.note" style="font-size: 10px;"/>
             <p t-if="doc.payment_term_id.note">
-                <span t-field="doc.payment_term_id.note" style="font-size: 13px"/>
+                <span t-field="doc.payment_term_id.note"/>
             </p>
             <p id="fiscal_position_remark" t-if="doc.fiscal_position_id and doc.fiscal_position_id.note">
                 <strong>Posición Fiscal:</strong>

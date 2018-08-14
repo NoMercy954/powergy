@@ -8,7 +8,7 @@ class ReportPurchase(models.Model):
 	"""docstring for ReportPurchase"""
 	_inherit = 'purchase.order'
 
-	observations= fields.Text(string='Observaciones', size='255')
+	observations= fields.Text(string='Observaciones')
 	amount_to_text = fields.Char(compute='_get_amount_to_text', string='Monto en Texto', readonly=True,
                                  help='Amount of the invoice in letter')
 	@api.one
@@ -21,4 +21,4 @@ class ReportFactura(models.Model):
 
 	_inherit = 'account.invoice'
 
-	observations= fields.Text(string='Observaciones', size='255')
+	observations= fields.Text(string='Observaciones')
