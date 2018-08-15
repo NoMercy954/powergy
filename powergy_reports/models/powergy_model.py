@@ -28,4 +28,4 @@ class ReportPago(models.Model):
 
 	_inherit = 'account.payment'
 
-	cambio= fields.Float(string='Tipo Cambio')
+	cambio = fields.Float(string='Tipo Cambio')
