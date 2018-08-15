@@ -22,3 +22,10 @@ class ReportFactura(models.Model):
 	_inherit = 'account.invoice'
 
 	observations= fields.Text(string='Observaciones')
+
+
+class ReportPago(models.Model):
+
+	_inherit = 'account.payment'
+
+	cambio= fields.Float(string='Tipo Cambio')

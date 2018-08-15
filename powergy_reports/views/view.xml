@@ -19,10 +19,22 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="account.invoice_form" />
             <field name="arch" type="xml">
-       			<xpath expr="//page[@name='other_info']//field[@name='name']" position="after">                    
+       			<xpath expr="//page[@name='other_info']//field[@name='name']" position="after">               
            			 <field name="observations"/>
   				</xpath>
   			</field>
+</record>
+
+<record id="inherit_account_payment_form" model="ir.ui.view">
+       <field name="name">inherit_purchase_order</field>
+       <field name="model">account.payment</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.view_account_payment_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_transaction_id']" position="before">
+                  <field name="cambio"/>
+                </xpath>
+            </field>
 </record>
 </data>
 </odoo>
