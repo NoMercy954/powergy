@@ -8,8 +8,9 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="purchase.purchase_order_form" />
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='date_order']" position="after">
+                <xpath expr="//field[@name='date_order']" position="before">
                   <field name="observations"/>
+                  <field name="type_of_order"/>
                 </xpath>
             </field>
 </record>
@@ -36,5 +37,28 @@
                 </xpath>
             </field>
 </record>
+
+<record id="inherit_sale_order" model="ir.ui.view">
+            <field name="name">inherit_sale_order</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+       <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+                    <page name="marco" string="Marco">
+                            <group name="group"> 
+                                <group name="group_left">
+                                    <field name="name_site" />
+                                    <field name="no_adrisa" />
+                                    <field name="folio_patrimonial" />
+                                </group>
+                                <group name="group_rigth">
+                                    <field name="indiv_orders"/> 
+                                </group>                     
+                            </group>
+                    </page>
+       </xpath>
+                </field>          
+  </record>
 </data>
 </odoo>

@@ -65,6 +65,22 @@
                     <strong>Fecha de caducidad:</strong>
                     <p t-field="doc.validity_date"/>
                 </div>
+                 <div class="col-xs-3">
+                    <strong>Nombre de sitio:</strong>
+                    <p t-field="doc.name_site"/>
+                </div>   
+                 <div class="col-xs-3">
+                    <strong>No. Adrisa/Grafo:</strong>
+                    <p t-field="doc.no_adrisa"/>
+                </div>   
+                 <div class="col-xs-3">
+                    <strong>Folio S. Patrimonial:</strong>
+                    <p t-field="doc.folio_patrimonial"/>
+                </div>   
+               <div class="col-xs-3">
+                    <strong>Marco:</strong>
+                    <p t-field="doc.opportunity_id.name"/>
+                </div>                                 
             </div>
 
             <!-- Is there a discount on at least one line? -->
@@ -179,6 +195,9 @@
                         </table>
                     </div>
                 </div>
+            </div>
+            <div>
+                   <span>Pedidos Individuales: </span><span t-field="doc.indiv_orders" />
             </div>
 
             <p t-field="doc.note" style="font-size: 10px;"/>

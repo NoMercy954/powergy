@@ -57,6 +57,18 @@
                     <strong>Terminos de pago: </strong>
                     <p t-field="o.requisition_id"/>  
                 </div>
+                <div class="col-xs-3">
+                    <strong>Cuenta Analitica: </strong>
+                    <p t-field="o.order_line.account_analytic_id"/>  
+                </div>
+                <div class="col-xs-3">
+                    <strong>Etiqueta Analitica: </strong>
+                    <p t-field="o.order_line.analytic_tag_ids.name"/>  
+                </div>
+                <div class="col-xs-3">
+                    <strong>Tipo de Pedido: </strong>
+                    <p t-field="o.type_of_order"/>  
+                </div>
 
             </div>
 
