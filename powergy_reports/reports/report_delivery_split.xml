@@ -69,7 +69,7 @@
                                         <span t-field="move.price_unit"/>                                        
                                     </td>
                                 <t t-set="subtotal" t-value="subtotal + (move.price_unit * move.quantity_done)" />
-                                <t t-set="tax" t-value="tax + ((move.product_id.tax_id.amount / 100)*(move.price_unit * move.quantity_done))"/>
+                                <t t-set="tax" t-value="tax + ((move.product_id.taxes_id.amount / 100)*(move.price_unit * move.quantity_done))"/>
 
                                    
                                 </tr>
@@ -94,8 +94,8 @@
                                     </th>
                                     <th class="text-center"><strong>Quantity</strong>
                                 </th>
-                        </tr>
-                    </thead>
+                                </tr>
+                            </thead>
                     <tbody>
                         <tr t-foreach="o.move_line_ids" t-as="move_line">
                             <td>
