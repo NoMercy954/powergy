@@ -67,7 +67,7 @@
                 </div>
                 <div class="col-xs-3">
                     <strong>Tipo de Pedido: </strong>
-                    <p t-field="o.type_of_order"/>  
+                    <p t-field="o.type_order"/>  
                 </div>
 
             </div>
