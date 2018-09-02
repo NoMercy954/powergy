@@ -8,12 +8,12 @@ class ReportPurchase(models.Model):
 	"""docstring for ReportPurchase"""
 	_inherit = 'purchase.order'
 
+	type_of_order = fields.Selection([('national','National'),
+							   		('international','International')], help='Choose the type of order', default='national',required=True)
 	observations= fields.Text(string='Observations')
 	amount_to_text = fields.Char(compute='_get_amount_to_text', string='Monto en Texto', readonly=True,
                                  help='Amount of the invoice in letter')
-	type_of_order = fields.Selection([('national','National'),
-							   		('international','International')], help='Choose the type of order', default='national',required=True)
-
+	
 	@api.one
 	@api.depends('amount_total')
 	def _get_amount_to_text(self):
