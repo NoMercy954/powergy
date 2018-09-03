@@ -57,14 +57,16 @@
                     <strong>Terminos de pago: </strong>
                     <p t-field="o.requisition_id"/>  
                 </div>
+<!--
                 <div class="col-xs-3">
                     <strong>Cuenta Analitica: </strong>
-                    <p t-field="o.order_line.account_analytic_id"/>  
+                    <p t-field="o.order_line.account_analytic_id.name"/> 
                 </div>
                 <div class="col-xs-3">
                     <strong>Etiqueta Analitica: </strong>
                     <p t-field="o.order_line.analytic_tag_ids.name"/>  
                 </div>
+-->
                 <div class="col-xs-3">
                     <strong>Tipo de Pedido: </strong>
                     <p t-field="o.type_order"/>  
@@ -76,6 +78,8 @@
                 <thead>
                     <tr>
                         <th><strong>Descripción</strong></th>
+                        <th><strong>Cuenta Analitica</strong></th
+                        <th><strong>Etiqueta Analitica</strong></th>
                         <th><strong>Impuestos</strong></th>
                         <th class="text-center"><strong>Fecha req.</strong></th>
                         <th class="text-right"><strong>Cant</strong></th>
@@ -87,6 +91,12 @@
                     <tr t-foreach="o.order_line" t-as="line">
                         <td>
                             <span t-field="line.name"/>
+                        </td>
+                        <td>
+                            <span t-field="line.order_line.account_analytic_id.name"/> 
+                        </td>
+                        <td>
+                            <span t-field="o.order_line.account_analytic_id.name"/> 
                         </td>
                         <td>
                             <span t-esc="', '.join(map(lambda x: x.name, line.taxes_id))"/>
