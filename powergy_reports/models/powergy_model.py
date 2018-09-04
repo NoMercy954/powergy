@@ -41,3 +41,11 @@ class QuotationsFields(models.Model):
 	name_site = fields.Char(string='Nombre de sitio')
 	no_adrisa = fields.Char(string='No. Adrisa/Grafo')
 	folio_patrimonial = fields.Char(string='Folio de pase de acceso de Seguridad Patrimonial')
+
+class FieldsAlbaran(object):
+
+	_inherit = 'stock.picking'
+
+
+	observations = fields.Text(string='Observations')
+	op = fields.Char(string='OP')

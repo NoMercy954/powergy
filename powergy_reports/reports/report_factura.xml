@@ -58,7 +58,7 @@
 
                         <div class="col-xs-2">
                             <strong>Uso de CFDI:</strong>
-                            <p t-field="o.l10n_mx_edi_origin"/>
+                            <p t-field="o.l10n_mx_edi_usage"/>
                         </div>                        
                         <!-- Xmarts Fields-->
 
