@@ -33,7 +33,7 @@
                                 <strong>RFC: </strong><span t-field="o.partner_id.vat"/>
                             </div>
                             <div class="col-xs-6">
-                                <strong>Uso de CFDI: </strong><span t-field="o.l10n_mx_edi_origin"/>
+                                <strong>Uso de CFDI: </strong><span t-field="o.l10n_mx_edi_usage"/>
                             </div>
                             <div class="col-xs-6">
                                 <strong>Recidencia Fiscal: </strong><span t-field="o.partner_id.country_id"/>
@@ -43,7 +43,13 @@
                             </div>
                             <div class="col-xs-6">
                                 <strong>Moneda: </strong><span t-field="o.currency_id"/>
-                            </div>                             
+                            </div>
+                            <div class="col-xs-6">
+                                <strong>CLABE EMISOR: </strong><span t-field="o.journal_id"/>
+                            </div>                              
+                            <div class="col-xs-6">
+                                <strong>CLABE RECEPTOR: </strong><span />
+                            </div>
                         </div>
                         <table class="table table-condensed">
                             <thead>
