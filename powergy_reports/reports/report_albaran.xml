@@ -73,13 +73,13 @@
                                   <t t-set="has_serial_number" t-value="o.move_line_ids.filtered(lambda ml: ml.lot_id or ml.lot_name)" groups="stock.group_production_lot"/>
                                   <thead>
                                     <tr>
-                                        <th width="15%">Producto</th>
+                                        <th width="25%">Producto</th>
                                         <th width="10%">Cantidad</th>
-                                        <th width="20%" class="text-center">
+                                        <th width="10%" class="text-center">
                                             <t t-if="has_barcode">Código de barras</t>
                                         </th>
 
-                                        <th width="15%"> 
+                                        <th width="10%"> 
                                             <t t-if="o.picking_type_id.code != 'incoming'" align="left">Origen</t>
                                         </th>
                                         <th width="10%">

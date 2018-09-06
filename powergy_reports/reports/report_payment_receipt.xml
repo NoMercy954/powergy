@@ -45,11 +45,15 @@
                                 <strong>Moneda: </strong><span t-field="o.currency_id"/>
                             </div>
                             <div class="col-xs-6">
-                                <strong>CLABE EMISOR: </strong><span t-field="o.journal_id"/>
+                                <strong>Moneda: </strong><span t-field="o.currency_id"/>
+                            </div>                           
+                            <div class="col-xs-6">
+                                <strong>Cuenta Emisor: </strong><span t-field="o.journal_id"/>
                             </div>                              
                             <div class="col-xs-6">
-                                <strong>CLABE RECEPTOR: </strong><span t-field="o.partner_id.clabe_banco" />
+                                <strong>CLABE receptor: </strong><span t-field="o.partner_id.clabe_banco" />
                             </div>
+
                         </div>
                         <table class="table table-condensed">
                             <thead>
