@@ -1,8 +1,8 @@
 {
-    'name': 'Reportes Powergy',
+    'name': 'Reports & Fields',
     'version': '1.0',
-    'summary': 'Personalizacion de reportes para Powergy',
-    'description': 'Adicion de diversos campos para tener obtener diferentes reportes con informacion',
+    'summary': 'Personalizacion de reportes y vistas para Powergy',
+    'description': 'Adecuaciones a los reportes incluidos en odoo, se incluyen campos a diversas ventanas para el uso de datos en los reportes que en este modulo se agregan',
     'category': 'Personalizacion',
     'author': 'William Colin Macedo',
     'website': 'www.xmarts.com',
