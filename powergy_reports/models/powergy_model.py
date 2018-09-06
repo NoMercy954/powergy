@@ -34,8 +34,6 @@ class ReportPago(models.Model):
 	cambio = fields.Float(string='Tipo Cambio')
 	bank_reference = fields.Char(string='Ref. Bancaria')
 
-	clabe_em = fields.Char(string='Clabe del emisor')
-	clabe_re = fields.Char(string='Clabe del receptor')
 
 class QuotationsFields(models.Model):
 
@@ -45,6 +43,14 @@ class QuotationsFields(models.Model):
 	name_site = fields.Char(string='Nombre de sitio')
 	no_adrisa = fields.Char(string='No. Adrisa/Grafo')
 	folio_patrimonial = fields.Char(string='Folio de pase de acceso de Seguridad Patrimonial')
+
+	observations= fields.Text(string='Observations')
+	deliver_pro = fields.Char(string='Ingresa aqui el lugar de la entrega')
+	numor_customer = fields.Char(string='Numero de Pedido Cliente')
+	fianza = fields.Char(string='Fianza')
+	receipt_date = fields.Date(string='Fecha de recepcion')
+	delivery_time = fields.Char(string='Tiempo de Entrega')
+	made_by = fields.Many2one('res.users', string='Elaborado por')
 
 class FieldsAlbaran(models.Model):
 

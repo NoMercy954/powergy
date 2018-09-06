@@ -85,8 +85,8 @@
                                         <th width="10%">
                                             <t t-if="has_serial_number">Lote/Nº de serie</t>
                                         </th>
-                                        <th width="15%" class="text-right">Destino</th>
-                                        <th width="10%" class="text-right">Precio Unitario</th>
+                                        <th width="15%" class="text-right">Destino   </th>
+                                        <th width="15%" class="text-right">Precio Unitario</th>
 
                                     </tr>
                                 </thead>

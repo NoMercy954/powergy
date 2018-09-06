@@ -35,7 +35,7 @@
                 </t>
                 <span t-field="doc.name"/>
             </h2>
-
+            <span t-field="doc.observations"/><br/>
             <div class="row mt32 mb32" id="informations">
                 <div t-if="doc.client_order_ref" class="col-xs-3">
                     <strong>Su referencia:</strong>
@@ -65,22 +65,40 @@
                     <strong>Fecha de caducidad:</strong>
                     <p t-field="doc.validity_date"/>
                 </div>
-                 <div class="col-xs-3">
+                 <div t-if="doc.name_site" class="col-xs-3">
                     <strong>Nombre de sitio:</strong>
                     <p t-field="doc.name_site"/>
                 </div>   
-                 <div class="col-xs-3">
+                 <div t-if="doc.no_adrisa" class="col-xs-3">
                     <strong>No. Adrisa/Grafo:</strong>
                     <p t-field="doc.no_adrisa"/>
                 </div>   
-                 <div class="col-xs-3">
+                 <div t-if="doc.folio_patrimonial" class="col-xs-3">
                     <strong>Folio S. Patrimonial:</strong>
                     <p t-field="doc.folio_patrimonial"/>
                 </div>   
-               <div class="col-xs-3">
+                <div t-if="doc.opportunity_id.name" class="col-xs-3">
                     <strong>Marco:</strong>
                     <p t-field="doc.opportunity_id.name"/>
-                </div>                                 
+                </div> 
+                <div t-if="doc.deliver_pro" class="col-xs-3">
+                    <strong>Luegar de entrega:</strong>
+                    <p t-field="doc.deliver_pro"/>
+                </div>
+                <div t-if="doc.numor_customer" class="col-xs-3">
+                    <strong>Numero de pedido cliente:</strong>
+                    <p t-field="doc.numor_customer"/>
+                </div>
+                <div t-if="doc.fianza" class="col-xs-3">
+                    <strong>Fianza:</strong>
+                    <p t-field="doc.fianza"/>
+                </div> 
+                <div t-if="doc.delivery_time" class="col-xs-3">
+                    <strong>Tiempo de Entrega:</strong>
+                    <p t-field="doc.delivery_time"/>
+                </div>
+
+
             </div>
 
             <!-- Is there a discount on at least one line? -->
@@ -196,6 +214,14 @@
                     </div>
                 </div>
             </div>
+
+            <table width="100%" style="margin:auto;">
+                <tr>
+                 <td><div t-if="doc.made_by" class="col-xs-3"><strong>Hecho por:</strong><p t-field="doc.made_by"/></div></td>
+                 <td><strong>Vendedor:</strong><span t-field="doc.partner_id.user_id.name"/></td>
+                </tr>
+            </table>
+
             <div>
                    <span>Pedidos Individuales: </span><span t-field="doc.indiv_orders" />
             </div>
