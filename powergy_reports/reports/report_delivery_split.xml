@@ -61,8 +61,7 @@
                                     <td>
                                         <span t-field="move.quantity_done"/>
                                         <span t-field="move.product_uom"/>
-                                    </td>
-                                </tr>                             
+                                    </td>                             
                             </tbody>
                         </table>
                         <table class="table table-condensed mt48" t-if="o.move_line_ids">

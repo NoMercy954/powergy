@@ -5,7 +5,7 @@ from . import amount_to_text
 
 
 class ReportPurchase(models.Model):
-
+	"""docstring for ReportPurchase"""
 	_inherit = 'purchase.order'
 
 	type_order = fields.Selection([('national','National'),
@@ -32,13 +32,9 @@ class ReportPago(models.Model):
 	_inherit = 'account.payment'
 
 	cambio = fields.Float(string='Tipo Cambio')
-	bank_reference = fields.Char(string='Ref. Bancaria')
-
-	clabe_em = fields.Char(string='Clabe del emisor')
-	clabe_re = fields.Char(string='Clabe del receptor')
 
 class QuotationsFields(models.Model):
-
+	"""docstring for Quitations"""
 	_inherit = 'sale.order'
 
 	indiv_orders = fields.Text(string='Pedidos Individuales')	
@@ -46,15 +42,10 @@ class QuotationsFields(models.Model):
 	no_adrisa = fields.Char(string='No. Adrisa/Grafo')
 	folio_patrimonial = fields.Char(string='Folio de pase de acceso de Seguridad Patrimonial')
 
-class FieldsAlbaran(models.Model):
+class FieldsAlbaran(object):
 
 	_inherit = 'stock.picking'
 
-	observations = fields.Text(string='Observations')
-	op_text = fields.Char(string='OP')
 
-class ClabeField(models.Model):
-    
-	_inherit = 'res.partner'
-  
-	clabe_banco = fields.Char(string='CLABE', help='Aqui puedes ingresar tu CLABE de tu cuenta bancaria')
+	observations = fields.Text(string='Observations')
+	op = fields.Char(string='OP')
