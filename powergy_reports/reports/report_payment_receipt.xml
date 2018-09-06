@@ -45,7 +45,7 @@
                                 <strong>Moneda: </strong><span t-field="o.currency_id"/>
                             </div>
                             <div class="col-xs-6">
-                                <strong>Moneda: </strong><span t-field="o.currency_id"/>
+                                <strong>Referencia Bancarias: </strong><span t-field="o.bank_reference"/>
                             </div>                           
                             <div class="col-xs-6">
                                 <strong>Cuenta Emisor: </strong><span t-field="o.journal_id"/>
