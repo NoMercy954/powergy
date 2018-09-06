@@ -35,6 +35,9 @@
                 <xpath expr="//field[@name='payment_transaction_id']" position="after">
                   <field name="cambio"/>
                 </xpath>
+                <xpath expr="//field[@name='l10n_mx_edi_payment_method_id']" position="after">
+                  <field name="bank_reference" />
+                </xpath>                
             </field>
 </record>
 
@@ -60,7 +63,6 @@
        </xpath>
                 </field>          
   </record>
-
   <record id="inherit_stock_picking" model="ir.ui.view">
             <field name="name">inherit_stock_picking</field>
             <field name="model">stock.picking</field>
@@ -68,10 +70,20 @@
             <field name="inherit_id" ref="stock.view_picking_form" />
             <field name="arch" type="xml">
             <xpath expr="//field[@name='owner_id']" position="after">
-                        <page name="marco" string="Marco">
-                              <field name="op" />
+                              <field name="op_text" />
                               <field name="observations" />
-                        </page>
+            </xpath>
+            </field>          
+  </record>
+
+  <record id="inherit_res_partner" model="ir.ui.view">
+            <field name="name">inherit_res_partner</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+            <xpath expr="//field[@name='message_bounce']" position="after">
+                              <field name="clabe_banco" />
             </xpath>
             </field>          
   </record>

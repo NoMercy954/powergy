@@ -45,21 +45,12 @@
                             <p t-field="o.partner_id.ref"/>
                         </div>
 
-                        <!-- Xmarts Fields-->                       
-                        <div class="col-xs-2">
-                            <strong>Forma de Pago:</strong>
-                            <p t-field="o.l10n_mx_edi_usage"/>
-                        </div>                        
-
-                        <div class="col-xs-2">
-                            <strong>Metodo de Pago:</strong>
-                            <p t-field="o.l10n_mx_edi_payment_method_id"/>
+                        <!-- Xmarts Fields-->
+                        <div>
+                            <strong>UUID</strong>
+                            <p 
+                               style="font-size:8px" t-field="o.l10n_mx_edi_cfdi_uuid"/>
                         </div>
-
-                        <div class="col-xs-2">
-                            <strong>Uso de CFDI:</strong>
-                            <p t-field="o.l10n_mx_edi_usage"/>
-                        </div>                        
                         <!-- Xmarts Fields-->
 
                         <div name="reference" class="col-xs-2" t-if="o.reference">
