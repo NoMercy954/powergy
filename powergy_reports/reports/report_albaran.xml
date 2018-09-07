@@ -33,15 +33,15 @@
                                             <p t-if="o.sudo().partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'RFC'"/>: <span t-field="o.sudo().partner_id.vat"/></p>
                                         </div>
                                     </div>
-                                </div>
-                                <div style="margin:left;">
-                                    <span t-field="o.observations" />
-                                </div>
-                                <div style="margin:left;">
-                                    <span t-field="o.origin" />
-                                </div>                                
+                                </div>                             
                                 <br/>
                                 <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:300px;height:50px" class="pull-right mb16"/>
+                                <div style="align:left;">
+                                    <span t-field="o.observations" />
+                                </div>
+                                <div style="align:left;">
+                                    <span t-field="o.origin" />
+                                </div>                                   
                                 <h1 t-field="o.name" class="mt0 pull-left"/>
                                 <div class="clearfix"></div>
 
