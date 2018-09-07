@@ -63,6 +63,9 @@
     <field name="fianza"/>
     <field name="made_by"/>
   </xpath>
+  <xpath expr="//field[@name='payment_term_id']">
+    <field name="observations"/>
+  </xpath>
 </field>          
 </record>
 <record id="inherit_sale_order_stockk" model="ir.ui.view">

@@ -45,7 +45,7 @@ class QuotationsFields(models.Model):
 	folio_patrimonial = fields.Char(string='Folio de pase de acceso de Seguridad Patrimonial')
 
 	observations= fields.Text(string='Observations')
-	deliver_pro = fields.Char(string='Ingresa aqui el lugar de la entrega')
+	deliver_pro = fields.Char(string="Lugar de enterga", help='Ingresa aqui el lugar de la entrega')
 	numor_customer = fields.Char(string='Numero de Pedido Cliente')
 	fianza = fields.Char(string='Fianza')
 	receipt_date = fields.Date(string='Fecha de recepcion')
