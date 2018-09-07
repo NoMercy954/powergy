@@ -35,16 +35,16 @@
                                     </div>
                                 </div>                             
                                 <br/>
-                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:300px;height:50px" class="pull-right mb16"/>
-                                <div style="align:left;">
-                                    <span t-field="o.observations" />
-                                </div>
-                                <div style="align:left;">
-                                    <span t-field="o.origin" />
-                                </div>                                   
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:300px;height:50px" class="pull-right mb16"/>      
                                 <h1 t-field="o.name" class="mt0 pull-left"/>
                                 <div class="clearfix"></div>
 
+                                <div align="text-left">
+                                    <span t-field="o.observations" />
+                                </div>
+                                <div align="text-left">
+                                    <span t-field="o.origin" />
+                                </div>                                                             
                                 <table class="table table-condensed">
                                     <thead>
                                         <tr>
