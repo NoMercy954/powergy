@@ -43,7 +43,7 @@
                                     <span t-field="o.observations" />
                                 </div>
                                 <div align="text-left">
-                                    <span t-field="o.origin" />
+                                    <span t-field="o.owner_id.name" />
                                 </div>                                                             
                                 <table class="table table-condensed">
                                     <thead>
@@ -88,8 +88,10 @@
                                     </thead>
                                     <tbody>
                                         <t t-set="subtotal" t-value="0" />
-                                        <t t-set="tax" t-value="0"/> 
-                                        <tr t-foreach="o.move_lines.sorted(key=lambda m: m.product_id.id)" t-as="move">
+                                        <t t-set="tax" t-value="0"/>
+                                        <tr t-foreach="o.move_lines.sorted(key=lambda m: m.product_id.id)" t-as="move"> 
+                                            <t t-foreach="o.purchase_id.order_line.sorted(key=lambda m: m.product_id.id)" t-as="po">
+                                            <t t-if="move.product_id == po.product_id">
                                             <t t-set="ctotal" t-value="0"/>
                                             <td width="25%" class="text-center">
                                                 <span t-field="move.product_id.display_name"/>
@@ -110,17 +112,55 @@
                                                 <span t-field="move.quantity_done"/>
                                             </td>
                                             <td width="15%" class="text-center">
-                                                <span t-field="move.product_id.standard_price"/>
+                                                <span t-field="po.price_unit"/>
                                             </td>
                                             <td width="15%" class="text-center">
                                                 <t t-set="ctotal" t-value="ctotal + (move.product_id.standard_price * move.quantity_done)" />
                                                 <span t-esc="'{0:.3f}'.format(ctotal)"/>
                                             </td>
+                                                <t t-set="subtotal" t-value="subtotal + (po.price_unit * move.quantity_done)" />
+                                                <t t-set="tax" t-value="tax + ((move.product_id.taxes_id.amount / 100)*(po.price_unit * move.quantity_done))"/>
 
-                                    <!--        <td colspan="6">
+                                        </t>
+                                        </t>
+                                            <t t-foreach="o.sale_id.order_line.sorted(key=lambda m: m.product_id.id)" t-as="po">
+                                            <t t-if="move.product_id == po.product_id">
+                                            <t t-set="ctotal" t-value="0"/>
+                                            <td width="25%" class="text-center">
+                                                <span t-field="move.product_id.display_name"/>
+                                            </td>
+                                            <td width="15%" class="text-center">
+                                                <div>
+                                                    <span t-field="move.product_id.tracking"/>
+                                                    <span t-if="not move.product_id.tracking" t-field="move.product_id.tracking"/>
+                                                </div>
+                                            </td>
+                                            <td width="10%" class="text-center">
+                                                <span t-field="move.product_uom" />
+                                            </td>
+                                            <td width="10%" class="text-center">
+                                                <span t-field="move.product_uom_qty" />
+                                            </td>
+                                            <td width="10%" class="text-center">
+                                                <span t-field="move.quantity_done"/>
+                                            </td>
+                                            <td width="15%" class="text-center">
+                                                <span t-field="po.price_unit"/>
+                                            </td>
+                                            <td width="15%" class="text-center">
+                                                <t t-set="ctotal" t-value="ctotal + (move.product_id.standard_price * move.quantity_done)" />
+                                                <span t-esc="'{0:.3f}'.format(ctotal)"/>
+                                            </td>
+                                                <t t-set="subtotal" t-value="subtotal + (po.price_unit * move.quantity_done)" />
+                                                <t t-set="tax" t-value="tax + ((move.product_id.taxes_id.amount / 100)*(po.price_unit * move.quantity_done))"/>
+
+                                        </t>
+                                        </t>
+                                            <!--
+                                            <td colspan="6">
                                                 <t t-if="o.move_lines">
                                                     <table width="100%">
-                                                    <t t-foreach="o.move_lines" t-as="move" >                                                 
+                                                    <t t-foreach="o.move_lines" t-as="move" >        
                                                        <tr t-foreach="move.move_line_ids.sorted(key=lambda ml: ml.location_id.id)" t-as="ml">
                                                         <td width="20%">
                                                             <t t-if="o.picking_type_id.code != 'incoming'">
@@ -166,11 +206,15 @@
                                             <t t-else="">
                                                 <span>Aún sin reserva o cantidad realizada.</span>
                                             </t>
-                                            </td>  -->
+                                            </td> 
+                                            
+                                    -->
 
-                                                <t t-set="subtotal" t-value="subtotal + (move.product_id.standard_price * move.quantity_done)" />
-                                                <t t-set="tax" t-value="tax + ((move.product_id.taxes_id.amount / 100)*(move.product_id.standard_price * move.quantity_done))"/> 
+
+
                                         </tr>
+
+
                                         <tr>
                                             <td colspan="7">
                                             </td>
