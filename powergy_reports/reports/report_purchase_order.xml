@@ -145,7 +145,7 @@
             <br/><br/><br/>
             <div style="margin: auto;"><span t-field="o.amount_to_text"/><span t-field="o.currency_id"/></div>
             <br/>
-            <div style="margin: auto;">Elaborado por: <span t-field="o.create_uid" /></div>                
+            <div style="margin: auto;">Confirmado por: <span t-field="o.partner_id.user_id.name" /></div>                
             </div>                    
             <p t-field="o.notes"  style="font-size:10px;"/>
             <div class="oe_structure"/>

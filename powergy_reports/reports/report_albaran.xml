@@ -115,11 +115,11 @@
                                                 <span t-field="po.price_unit"/>
                                             </td>
                                             <td width="15%" class="text-center">
-                                                <t t-set="ctotal" t-value="ctotal + (move.product_id.standard_price * move.quantity_done)" />
+                                                <t t-set="ctotal" t-value="ctotal + (po.price_unit * move.quantity_done)" />
                                                 <span t-esc="'{0:.3f}'.format(ctotal)"/>
                                             </td>
                                                 <t t-set="subtotal" t-value="subtotal + (po.price_unit * move.quantity_done)" />
-                                                <t t-set="tax" t-value="tax + ((move.product_id.taxes_id.amount / 100)*(po.price_unit * move.quantity_done))"/>
+                                                <t t-set="tax" t-value="tax + ((po.taxes_id.amount / 100)*(po.price_unit * move.quantity_done))"/>
 
                                         </t>
                                         </t>
